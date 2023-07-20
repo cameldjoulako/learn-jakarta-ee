@@ -6,3 +6,4 @@ com\homedeve\controller\HelloServlet.class
 com\homedeve\controller\PdfServlet.class
 com\homedeve\controller\Somme.class
 com\homedeve\dto\Personne.class
+com\homedeve\controller\TestThreadSafeServlet.class
