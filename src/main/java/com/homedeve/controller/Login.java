@@ -39,6 +39,27 @@ public class Login extends HttpServlet {
        
     }
 
-    
+   @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        response.setContentType("text/html");
+        
+        PrintWriter out = response.getWriter();
+
+        String login = request.getParameter("login");        
+        String password = request.getParameter("password");
+        
+        out.println("<!DOCtml>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>LOGIN CONFIRMED</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Connected with account : "+ login +" / " + password + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+       
+    } 
 
 }
