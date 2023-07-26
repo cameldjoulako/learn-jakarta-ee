@@ -24,6 +24,17 @@ public class PayerLivreServlet extends HttpServlet {
         
         String identifiantLivre = (String) session.getAttribute("identifiantLivre");
         
+        
+        //méthode 1  de suppression de la ssession  
+          session.setAttribute("identifiantLivre", null);
+          
+          //méthode2  de suppression de la ssession  
+          session.removeAttribute("identifiantLivre");
+          
+          
+          //méthode2  de suppression de la ssession:  cas des deconnexion pour retirer complement du serveur
+          session.invalidate();
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCtml>");
@@ -36,6 +47,9 @@ public class PayerLivreServlet extends HttpServlet {
             out.println("<h2>Le numéro du livre payé est : "+identifiantLivre+ "</h2> <br />");
             out.println("</body>");
             out.println("</html>");
+            
+          
+            
         }
     }
 
