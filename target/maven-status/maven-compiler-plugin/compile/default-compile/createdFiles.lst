@@ -3,7 +3,9 @@ com\homedeve\controller\AboutServlet.class
 com\homedeve\controller\Login.class
 com\homedeve\JakartaRestConfiguration.class
 com\homedeve\controller\HelloServlet.class
+com\homedeve\controller\LivreServlet.class
 com\homedeve\controller\PdfServlet.class
 com\homedeve\controller\Somme.class
+com\homedeve\controller\PayerLivreServlet.class
 com\homedeve\dto\Personne.class
 com\homedeve\controller\TestThreadSafeServlet.class
