@@ -1,5 +1,6 @@
 package com.homedeve.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,10 +29,13 @@ public class Somme extends HttpServlet {
         String n1 = request.getParameter("n1");        
         String n2 = request.getParameter("n2");
         
-        somme  = Integer.parseInt(n1) + Integer.parseInt(n2);
-
         
-        out.println("<!DOCtml>");
+        
+        try {
+            
+            somme  = Integer.parseInt(n1) + Integer.parseInt(n2);
+        
+            out.println("<!DOCtml>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet AboutServlet</title>");            
@@ -40,6 +44,12 @@ public class Somme extends HttpServlet {
             out.println("<h1>Somme des deux nombres: "+somme + "</h1>");
             out.println("</body>");
             out.println("</html>");
+            
+        } catch (NumberFormatException nfe) {
+            //RequestDispatcher dispacher = request.getRequestDispatcher("/unexpected-error.html");
+            RequestDispatcher dispacher = request.getRequestDispatcher("/unexpected-error");
+            dispacher.forward(request, response);
+        }
        
     }
 
