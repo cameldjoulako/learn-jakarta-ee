@@ -14,7 +14,7 @@
     <body>
         <h1>Hello World JSP</h1>
         <%
-            int nombre  = 20;
+            int nombre = Integer.parseInt(request.getParameter("nombre"));
             
             if(nombre == 20) {
             %>   
