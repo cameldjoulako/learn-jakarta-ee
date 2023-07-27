@@ -4,6 +4,8 @@
     Author     : Camel
 --%>
 
+<%@page import="java.util.ArrayList" %>
+<%@page import="com.homedeve.dto.Personne" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,11 +16,16 @@
     <body>
         <h1>Hello World JSP</h1>
         <%
-            int nombre = Integer.parseInt(request.getParameter("nombre"));
+            //implicite
+            //int nombre = Integer.parseInt(request.getParameter("nombre"));
             
+            Personne camel = new Personne("Camel", "Leonce");
+            int nombre = 20;
             if(nombre == 20) {
             %>   
             Le nombre vaut: <%= nombre %>
+            
+            Bonjour <%= camel.getFullName() %>
             
             <%
             }

@@ -1,6 +1,7 @@
 com\homedeve\JakartaRestConfiguration.class
 com\homedeve\controller\UnexpectedErrorServlet.class
 com\homedeve\controller\LivreServlet.class
+com\homedeve\dto\Livre.class
 com\homedeve\resources\JakartaEE91Resource.class
 com\homedeve\controller\AboutServlet.class
 com\homedeve\controller\Login.class

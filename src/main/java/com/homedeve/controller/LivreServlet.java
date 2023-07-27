@@ -1,5 +1,6 @@
 package com.homedeve.controller;
 
+import com.homedeve.dto.Livre;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,7 +25,12 @@ public class LivreServlet extends HttpServlet {
         
         String identifiantLivre = request.getParameter("id");
         
-        session.setAttribute("identifiantLivre", identifiantLivre);
+        //session.setAttribute("identifiantLivre", identifiantLivre);
+        
+        Livre livre = new Livre();    
+        livre.setNumeroLivre(Integer.parseInt(identifiantLivre));
+        
+        session.setAttribute("livre", livre);
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
