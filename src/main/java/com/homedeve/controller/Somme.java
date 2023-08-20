@@ -27,18 +27,24 @@ public class Somme extends HttpServlet {
         
         int somme = 0;
         String n1 = request.getParameter("n1");        
-        String n2 = request.getParameter("n2");
-        
-        
+        String n2 = request.getParameter("n2");    
         
         try {
             
             somme  = Integer.parseInt(n1) + Integer.parseInt(n2);
+            
+            String format = request.getParameter("format");
+            request.setAttribute("somme", somme);
+            
+            if(format != null && format.equals("pdf")) {
+                RequestDispatcher dispacher = request.getRequestDispatcher("/pdf");
+                dispacher.forward(request, response);
+            } else {}
         
             out.println("<!DOCtml>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AboutServlet</title>");            
+            out.println("<title>Somme de deux nombres</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Somme des deux nombres: "+somme + "</h1>");
