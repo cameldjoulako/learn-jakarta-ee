@@ -19,7 +19,7 @@ public class AboutServlet extends HttpServlet {
         Personne camel = new Personne("Camel", "Leonce");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCtml>");
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet AboutServlet</title>");            

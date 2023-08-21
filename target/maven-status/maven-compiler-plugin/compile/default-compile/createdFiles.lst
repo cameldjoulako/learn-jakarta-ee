@@ -9,5 +9,6 @@ com\homedeve\controller\HelloServlet.class
 com\homedeve\controller\PdfServlet.class
 com\homedeve\controller\Somme.class
 com\homedeve\controller\PayerLivreServlet.class
+com\homedeve\hojapp\ressources\CalculationResource.class
 com\homedeve\dto\Personne.class
 com\homedeve\controller\TestThreadSafeServlet.class

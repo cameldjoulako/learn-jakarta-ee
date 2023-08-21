@@ -39,17 +39,21 @@ public class Somme extends HttpServlet {
             if(format != null && format.equals("pdf")) {
                 RequestDispatcher dispacher = request.getRequestDispatcher("/pdf");
                 dispacher.forward(request, response);
-            } else {}
-        
-            out.println("<!DOCtml>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Somme de deux nombres</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Somme des deux nombres: "+somme + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            } else {                
+                
+                RequestDispatcher dispacher = request.getRequestDispatcher("/affichage-somme.jsp");
+                dispacher.forward(request, response);
+                /*out.println("<!DOCtml>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Somme de deux nombres</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>Somme des deux nombres: "+somme + "</h1>");
+                out.println("</body>");
+                out.println("</html>");*/
+            
+            }
             
         } catch (NumberFormatException nfe) {
             //RequestDispatcher dispacher = request.getRequestDispatcher("/unexpected-error.html");
